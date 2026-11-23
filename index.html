@@ -1,25 +1,225 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First  Page</title>
-
+    <title>Apex FC</title>
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
             line-height: 1.6;
             color: #222;
+            background-color: #87ceeb;
+        }
+
+        header {
+            padding: 20px;
+            color: white;
+            background-color: navy;
+            text-align: center;
+        }
+
+        nav {
+            padding: 12px;
+            background-color: #ffbf00;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 10px;
+            color: #183153;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        h2 {
+            color: #183153;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        label, input, select {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 400px;
+            padding: 9px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 16px;
+            color: white;
+            background-color: #183153;
+            border: 0;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #284a73;
+        }
+
+        footer {
+            padding: 15px;
+            color: white;
+            background-color: #183153;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            table {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
-
 <body>
-    <h1>Hello, world!</h1>
-    <p>Welcome to my first web page.</p>
+    <header>
+        <h1>Apex FC</h1>
+        <p>Pride and Glory</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#squad">Squad</a>
+        <a href="#fixtures">Fixtures</a>
+        <a href="#results">Results</a>
+        <a href="#membership">Membership</a>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to Apex FC</h2>
+            <p>We are a football club for players and supporters. Follow our team, check upcoming matches, and become a club member.</p>
+        </section>
+
+        <section id="squad">
+            <h2>First Team Squad</h2>
+            <ul>
+                <li>Marcus Vance — Goalkeeper</li>
+                <li>Diego Silva — Defender</li>
+                <li>Liam O'Connor — Defender</li>
+                <li>Mateo Kovac — Midfielder</li>
+                <li>Julian Brandt — Midfielder</li>
+                <li>Kai Sterling — Forward</li>
+                <li>Victor Osim — Forward</li>
+                <li>Lucas Hernandez — Defender</li>
+            </ul>
+        </section>
+
+        <section id="fixtures">
+            <h2>Upcoming Fixtures</h2>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Match</th>
+                    <th>Competition</th>
+                </tr>
+                <tr>
+                    <td>December 5, 2026</td>
+                    <td>Apex FC vs Titan United</td>
+                    <td>Premier League</td>
+                </tr>
+                <tr>
+                    <td>December 12, 2026</td>
+                    <td>Vanguard Rovers vs Apex FC</td>
+                    <td>Premier League</td>
+                </tr>
+                <tr>
+                    <td>December 16, 2026</td>
+                    <td>Apex FC vs Real Madrid S.C.</td>
+                    <td>Champions Cup</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="results">
+            <h2>Recent Results</h2>
+            <ul>
+                <li>Apex FC 3 - 1 Metro Strikers</li>
+                <li>Coastal Athletic 0 - 2 Apex FC</li>
+                <li>Apex FC 2 - 2 Bayern Dynamo</li>
+            </ul>
+        </section>
+
+        <section id="membership">
+            <h2>Join the Club</h2>
+            <p>Fill in the form to register your interest in Apex FC membership.</p>
+            <form id="membershipForm">
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" required>
+
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email" required>
+
+                <label for="membershipType">Membership type</label>
+                <select id="membershipType" name="membershipType">
+                    <option>Bronze Fan</option>
+                    <option>Silver Member</option>
+                    <option>Gold Legend</option>
+                </select>
+
+                <button type="submit">Send Registration</button>
+            </form>
+            <p id="message"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Apex Football Club</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("membershipForm");
+        const message = document.getElementById("message");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            message.textContent = "Thanks for your interest in Apex FC!";
+            form.reset();
+        });
+    </script>
 </body>
 </html>
